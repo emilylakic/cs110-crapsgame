@@ -29,7 +29,7 @@ def roll():
 
 #Returns true if this die is rolling, otherwise returns false
 def isRolling():
-    return xSpeed > speedLimit || xSpeed < -speedLimit || ySpeed > speedLimit || ySpeed < -speedLimit
+    return xSpeed > speedLimit or xSpeed < -speedLimit or ySpeed > speedLimit or ySpeed < -speedLimit
 
 #Keeps moving this die as long as it overlaps with other
 def avoidCollision(other):
