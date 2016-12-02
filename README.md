@@ -1,2 +1,3 @@
-# crapsgame
-CS110 Project Code
+# Craps Game
+CS110 Final Project
+Repository created for storing code
