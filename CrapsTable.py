@@ -23,7 +23,7 @@ class CrapsTable(Frame):
         self.clock.start()
     def actionPerformed():
         if(isDiceRolling()):
-            if(!self.clock.isRunning()):
+            if(not self.clock.isRunning()):
                 self.clock.restart()
             if(self.die1.isRolling()):
                 self.die1.avoidCollision(die2)
