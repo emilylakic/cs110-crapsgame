@@ -6,7 +6,7 @@ def main():
     die2 = Die(6)
     game = CrapsGame()
     for i in range(5):
-        print()
+        print("")
         total = die1.roll() + die2.roll()
         if(game.processRoll(total) == 1):
             print("You rolled " + str(total) + ". You win!")
