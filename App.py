@@ -1,8 +1,8 @@
-import Tkinter
+import tkinter
 import time
 class App():
     def __init__(self):
-        self.root = tk.tk()
+        self.root = tkinter.tk()
         self.label = tk.Label(text="")
         self.label.pack()
         self.update_clock()
