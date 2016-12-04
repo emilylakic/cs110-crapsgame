@@ -1,4 +1,4 @@
-from tkinter import Tk, Frame, BOTH
+from Tkinter import Tk, Frame, BOTH
 import DisplayPanel
 import ControlPanel
 import CrapsTable
