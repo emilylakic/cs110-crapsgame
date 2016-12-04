@@ -12,7 +12,7 @@ class CrapsTable(Frame):
         self.display = DisplayPanel()
 
     def CrapsTable(display):
-        root = Tk()
+        root = tk()
         root.configure(background='green')
         widget.config(highlightbackground='Orange')
 
