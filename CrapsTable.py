@@ -1,4 +1,4 @@
-from Tkinter import *
+from tkinter import *
 from RollingDie import *
 from App import*
 
@@ -10,10 +10,9 @@ class CrapsTable(Frame):
         self.display = display
         self.clock = App()
         self.game = CrapsGame()
-        self.display = DisplayPanel()
 
     def CrapsTable(display):
-        root = tk()
+        root = Tk()
         root.configure(background='green')
         widget.config(highlightbackground='Orange')
 
