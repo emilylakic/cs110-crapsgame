@@ -1,15 +1,15 @@
 from tkinter import *
 from RollingDie import *
-from import App *
+from App import*
 
 class CrapsTable(Frame):
-    def __init__(self, clock):
+    def __init__(self, parent):
         self.die1 = RollingDie()
-        self.die2=RollingDie()
+        self.die2= RollingDie()
         self.delay = 20
         self.clock = App()
         self.game = CrapsGame()
-        self.display = DisplayPanel()
+        self.display = DisplayPanel(parent)
 
     def CrapsTable(display):
         root = Tk()
