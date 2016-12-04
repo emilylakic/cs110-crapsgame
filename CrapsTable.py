@@ -3,10 +3,11 @@ from RollingDie import *
 from App import*
 
 class CrapsTable(Frame):
-    def __init__(self, clock):
+    def __init__(self, clock, display):
         self.die1 = RollingDie()
         self.die2=RollingDie()
         self.delay = 20
+        self.display = display
         self.clock = App()
         self.game = CrapsGame()
         self.display = DisplayPanel()
