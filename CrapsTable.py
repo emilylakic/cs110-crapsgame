@@ -6,7 +6,7 @@ from App import *
 class CrapsTable(Frame):
     def __init__(self, display):
         self.die1 = RollingDie()
-        self.die2=RollingDie()
+        self.die2= RollingDie()
         self.delay = 20
         self.display = display
         #self.clock = App()
