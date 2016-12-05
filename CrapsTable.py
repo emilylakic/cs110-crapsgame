@@ -19,7 +19,7 @@ class CrapsTable(Frame):
 
     # Rolls the dice (called when the "Roll" button is clicked)
     def rollDie(self):
-        RollingDie.setBounds(-3, 3, 3, -3)
+        RollingDie.setBounds(-100, 100, 100, -100)
         self.die1.roll()
         self.die2.roll()
         self.clock.start()
