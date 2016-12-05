@@ -6,7 +6,7 @@ from CrapsGame import *
 
 class Craps(Frame):
     def __init__(self, parent):
-        Frame.__init__(self, parent, background="green")
+        Frame.__init__(self, parent, background="darkgreen", highlightbackground='orange', highlightthickness = 10)
         self.parent = parent
         self.parent.title("Craps Game")
         self.pack(fill=BOTH, expand=True)
