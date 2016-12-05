@@ -1,6 +1,7 @@
 from Tkinter import *
 from DisplayPanel import *
 from CrapsTable import *
+from CrapsGame import *
 from ControlPanel import *
 
 class Craps(Frame):
