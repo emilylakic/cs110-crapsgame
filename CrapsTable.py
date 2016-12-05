@@ -1,7 +1,7 @@
 # Represents the craps table with two rolling dice
-from tkinter import *
+from Tkinter import *
 from RollingDie import *
-from App import*
+from App import *
 
 class CrapsTable(Frame):
     def __init__(self, display):
