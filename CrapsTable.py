@@ -9,7 +9,7 @@ class CrapsTable(Frame):
         self.die2=RollingDie()
         self.delay = 20
         self.display = display
-        self.clock = App()
+        #self.clock = App()
         self.game = CrapsGame()
 
     def CrapsTable(display):
