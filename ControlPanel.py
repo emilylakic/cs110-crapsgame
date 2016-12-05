@@ -7,7 +7,7 @@ class ControlPanel:
     def __init__(self,table,parent):
         self.t = parent
         self.table = table
-        labelfont = ('Palatino', 11, 'bold')
+        labelfont = ('Palatino', 20, 'bold')
         button = Button(self.t, font = labelfont,text = "Roll",fg= "blue", command = lambda: self.rollButton())
         button.pack()
         button.place(anchor=NW)
