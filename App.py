@@ -1,9 +1,9 @@
-import tkinter
+from Tkinter import *
 import time
 class App():
     def __init__(self):
-        self.root = tkinter.tk()
-        self.label = tk.Label(text="")
+        self.root = Tk()
+        self.label = Label(text="")
         self.label.pack()
         self.update_clock()
         self.root.mainloop()
