@@ -14,7 +14,7 @@ class RollingDie:
         tableBottom = bottom
 
     #Sets this die off the table
-    def __init__():
+    def __init__(self):
         xCenter = -1
         yCenter = -1
 
@@ -23,7 +23,7 @@ class RollingDie:
         super().roll()
         width = tableRight - tableLeft
         height = tableBottom - tableTop
-        xCenter = tableLeft
+        xCenter = tableLeft / 2
         yCenter = tableTop + height / 2
         xSpeed = width * (Random.randrange(0.0,1.0)+1) * speedFactor
         ySpeed = height * (Random.randrange(0.0,1.0)-.5) * 2.0 * speedFactor

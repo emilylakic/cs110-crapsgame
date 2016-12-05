@@ -1,6 +1,6 @@
 from Tkinter import *
 import time
-class App():
+class App:
     def __init__(self):
         self.root = Tk()
         self.label = Label(text="")
@@ -12,4 +12,3 @@ class App():
         now = time.strftime("%H:%M:%S")
         self.label.configure(text=now)
         self.root.after(1000, self.update_clock)
-app=App()

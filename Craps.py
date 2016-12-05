@@ -13,10 +13,10 @@ class Craps(Frame):
         self.display = DisplayPanel(self.parent)
         self.table = CrapsTable(self.parent, self.display)
         self.control = ControlPanel(self.parent,self.table)
-        
+
         self.centerWindow()
 
-    
+
     def centerWindow(self):
         w = 750
         h = 550
@@ -34,11 +34,9 @@ class Craps(Frame):
         self.parent.destroy()
 
 def main():
-
     root = Tk()
     root.resizable(width=False, height=False)
     ex = Craps(root)
     root.protocol("WM_DELETE_WINDOW", ex.score)
     root.mainloop()
-
 main()
