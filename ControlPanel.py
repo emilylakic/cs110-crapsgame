@@ -1,5 +1,5 @@
 from CrapsTable import *
-from tkinter import *
+from Tkinter import *
 
 #Represents a control panel for a craps "table"
 class ControlPanel:
