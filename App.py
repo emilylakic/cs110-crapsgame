@@ -1,4 +1,4 @@
-from Tkinter import *
+from tkinter import *
 import time
 class App:
     def __init__(self):
