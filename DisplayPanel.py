@@ -1,4 +1,4 @@
-from tkinter import *
+from Tkinter import *
 
 #Represents a display panel for a craps table.
 class DisplayPanel:
