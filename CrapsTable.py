@@ -4,7 +4,7 @@ from RollingDie import *
 from App import*
 
 class CrapsTable(Frame):
-    def __init__(self, clock, display):
+    def __init__(self, display):
         self.die1 = RollingDie()
         self.die2=RollingDie()
         self.delay = 20
