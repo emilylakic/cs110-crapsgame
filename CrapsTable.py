@@ -2,6 +2,7 @@
 from Tkinter import *
 from RollingDie import *
 from App import *
+from CrapsGame import *
 
 class CrapsTable(Frame):
     def __init__(self, parent, display):
