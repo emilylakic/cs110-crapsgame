@@ -15,5 +15,6 @@ class ControlPanel:
     #The command for the roll button.
     #Makes the dice roll on the craps table
     def rollButton(self):
+        self.paintComponent()
         if(not self.table.isDiceRolling()):
             self.table.rollDie()
