@@ -2,8 +2,8 @@ from Die import *
 from CrapsGame import *
 
 def main():
-    die1= Die(6)
-    die2 = Die(6)
+    die1= Die()
+    die2 = Die()
     game = CrapsGame()
     for i in range(5):
         print("")
