@@ -7,7 +7,7 @@ class DisplayPanel:
         self.won = 0
         self.lost = 0
         self.point = 0
-        labelfont = ('Palatino', 12, 'bold')
+        labelfont = ('Palatino', 20, 'bold')
         self.t = parent
 
         self.wonLabel = Label(self.t,text="Won:  \n"+str(self.won),font=labelfont)
