@@ -36,7 +36,8 @@ class CrapsTable(Frame):
                 result = self.game.processRoll(total)
                 point = self.game.getPoint()
                 self.display.update(result, point)
-        repaint()
+        widget.repaint()
+        
     # returns true if dice are still rolling; otherwise
     # returns false
     def isDiceRolling(self):
