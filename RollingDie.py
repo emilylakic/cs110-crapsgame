@@ -122,25 +122,25 @@ class RollingDie(Die):
         if v == 1:
             #Make 1 Dot
             oval1 = canvas.create_oval(x2, y2, x2+self.dotSize, y2+self.dotSize)
-            break
+            
         if v == 2:
             #Make 2 Dots
             oval1 = canvas.create_oval(x1, y1, x1+self.dotSize, y1+self.dotSize)
             oval2 = canvas.create_oval(x3, y3, x3+self.dotSize, y3+self.dotSize)
-            break
+          
         if v == 3:
             #Make 3 Dots
             oval1 = canvas.create_oval(x1, y3, x1+self.dotSize, y3+self.dotSize)
             oval2 = canvas.create_oval(x2, y2, x2+self.dotSize, y2+self.dotSize)
             oval3 = canvas.create_oval(x3, y1, x3+self.dotSize, y1+self.dotSize)
-            break
+          
         if v == 4:
             #Make 4 Dots
             oval1 = canvas.create_oval(x1, y1, x1+self.dotSize, y1+self.dotSize)
             oval2 = canvas.create_oval(x3, y1, x3+self.dotSize, y1+self.dotSize)
             oval3 = canvas.create_oval(x1, y3, x1+self.dotSize, y3+self.dotSize)
             oval4 = canvas.create_oval(x3, y3, x3+self.dotSize, y3+self.dotSize)
-                break
+                
         if v == 5:
             #Make 5 Dots
             oval1 = canvas.create_oval(x1, y1, x1+self.dotSize, y1+self.dotSize)
@@ -148,7 +148,7 @@ class RollingDie(Die):
             oval3 = canvas.create_oval(x2, y2, x2+self.dotSize, y2+self.dotSize)
             oval4 = canvas.create_oval(x1, y3, x1+self.dotSize, y3+self.dotSize)
             oval5 = canvas.create_oval(x3, y3, x3+self.dotSize, y3+self.dotSize)
-                break
+                
         if v == 6:
             #Make 6 Dots
             oval1 = canvas.create_oval(x1, y1, x1+self.dotSize, y1+self.dotSize)
@@ -157,8 +157,7 @@ class RollingDie(Die):
             oval4 = canvas.create_oval(x3, y2, x3+self.dotSize, y2+self.dotSize)
             oval5 = canvas.create_oval(x1, y3, x1+self.dotSize, y3+self.dotSize)
             oval6 = canvas.create_oval(x3, y3, x3+self.dotSize, y3+self.dotSize)
-            break
-
+           
 def main():
     rolling = RollingDie()
     rolling.roll()
