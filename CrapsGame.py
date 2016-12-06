@@ -26,6 +26,6 @@ class CrapsGame:
 			self.result = 0
 		return self.result
 
-	#Returns the saved point
+#Returns the saved point
 	def getPoint(self):
 		return self.point
