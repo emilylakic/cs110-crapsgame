@@ -16,7 +16,7 @@ class CrapsGame:
 			else:
 				self.result = 0
 				self.point = total
-		elif(total == self.point):
+		elif(total == point):
 			self.result = 1
 			self.point = 0
 		elif(total == 7):
