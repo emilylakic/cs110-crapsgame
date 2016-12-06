@@ -15,6 +15,7 @@ class CrapsTable(Frame):
         
     # Rolls the dice (called when the "Roll" button is clicked)
     def rollDie(self):
+        print("Rolling Die.....")
         self.die1.setBounds(-3, 3, 3, -3)
         self.die2.setBounds(-3, 3, 3, -3)
         self.die1.roll()
