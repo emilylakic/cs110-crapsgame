@@ -1,3 +1,4 @@
+# Represents the craps table with two rolling dice
 from tkinter import *
 from RollingDie import *
 from CrapsGame import *
@@ -16,13 +17,16 @@ class CrapsTable(Frame):
         root = Tk()
         root.configure(background='green')
         widget.config(highlightbackground='Orange')
-
+        
+    # Rolls the dice (called when the "Roll" button is clicked)
     def rollDie(self):
         self.die1.setBounds(-3, 3, 3, -3)
         self.die2.setBounds(-3, 3, 3, -3)
         self.die1.roll()
         self.die2.roll()
         #self.clock.start()
+        
+    # Processes timer events
     def actionPerformed():
         if(isDiceRolling()):
             #if(not self.clock.isRunning()):
@@ -38,7 +42,8 @@ class CrapsTable(Frame):
                 point = self.game.getPoint()
                 self.display.update(result, point)
         repaint()
-
+    # returns true if dice are still rolling; otherwise
+    # returns false
     def isDiceRolling(self):
         return self.die1.isRolling() or self.die2.isRolling()
 
