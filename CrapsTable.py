@@ -12,11 +12,6 @@ class CrapsTable(Frame):
         self.display = display
         #self.clock = App()
         self.game = CrapsGame()
-
-    def CrapsTable(display):
-        root = Tk()
-        root.configure(background='green')
-        widget.config(highlightbackground='Orange')
         
     # Rolls the dice (called when the "Roll" button is clicked)
     def rollDie(self):
