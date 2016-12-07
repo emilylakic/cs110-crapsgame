@@ -58,6 +58,6 @@ class DisplayPanel:
             scoreLabel = Label(t, text = finalText, font = labelfont, fg = "Red")
         else:
             finalText += "You broke even!"
-            scoreLabel = Label(t, text = finalText, font = labelfont, fg = "Purple")
+            scoreLabel = Label(t, text = finalText, font = labelfont, fg = "Blue")
         scoreLabel.pack(padx = 20, pady = 20)
         t.mainloop()
