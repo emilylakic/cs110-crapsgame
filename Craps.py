@@ -10,11 +10,9 @@ class Craps(Frame):
         self.parent = parent
         self.parent.title("Craps Game")
         self.pack(fill=BOTH, expand=True)
-
         self.display = DisplayPanel(self.parent)
         self.table = CrapsTable(self.parent, self.display)
         self.control = ControlPanel(self.table,self.parent)
-        
         self.centerWindow()
 
     
