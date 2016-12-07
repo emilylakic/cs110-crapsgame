@@ -1,6 +1,8 @@
 from tkinter import *
 from RollingDie import *
 from CrapsGame import *
+import pyaudio
+import wave
 
 class CrapsTable(Frame):
     def __init__(self, parent, display,canvas):
@@ -24,6 +26,7 @@ class CrapsTable(Frame):
         self.die2.roll()
         self.die1.draw()
         self.die2.draw()
+        CrapsTable.playSound()
         self.actionPerformed()
 
     def actionPerformed(self):
@@ -42,3 +45,17 @@ class CrapsTable(Frame):
         self.die1.clearCanvas()
         self.die1.draw();
         self.die2.draw();
+
+    def playSound():
+        chunk = 1024
+        f = wave.open("roll.wav", "rb")
+        p = pyaudio.PyAudio()
+        stream = p.open(format = p.get_format_from_width(f.getsampwidth()),
+                channels = f.getnchannels(),rate = f.getframerate(),output = True)
+        data = f.readframes(chunk)
+        while len(data)>0:
+            stream.write(data)
+            data = f.readframes(chunk)
+        stream.stop_stream()
+        stream.close()
+        p.terminate()
