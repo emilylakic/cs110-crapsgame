@@ -2,7 +2,7 @@ from tkinter import *
 
 #Represents a display panel for a craps table.
 class DisplayPanel:
-    
+
     def __init__(self, parent):
         self.won = 0
         self.lost = 0
@@ -12,7 +12,7 @@ class DisplayPanel:
 
         self.wonLabel = Label(self.t,text="Won:  \n"+str(self.won),font=labelfont)
         self.wonLabel.pack(side=LEFT)
-        
+
         self.lostLabel = Label(self.t,text="Lost:  \n"+str(self.lost),font=labelfont)
         self.lostLabel.pack(side=RIGHT)
 
@@ -36,10 +36,10 @@ class DisplayPanel:
             self.point=point
             self.pointLabel.config(state = NORMAL,text="Point:  \n"+str(self.point),fg = "orange")
 
-    #Opens new final score window
-    #Only for when the player closes the main game window
+    #Opens new final score window when the player closes the main game window
     def scoreWindow(self):
-        t= Tk()
+        t = Tk()
+        t.wm_title("Game Stats")
         labelfont = ('Times', 15, 'bold')
         finalText = "Number of rolls won: " + str(self.won) +"\n"
         finalText += "Number of rolls lost: " + str(self.lost) + "\n\n"
@@ -49,9 +49,9 @@ class DisplayPanel:
         if(self.won==0 and self.lost==0):
             t.destroy()
             return
-        
+
         elif(self.won>self.lost):
-            finalText += "You won, Congratulations!"
+            finalText += "You won! Congratulations!!"
             scoreLabel = Label(t, text = finalText, font = labelfont, fg = "Green")
         elif(self.won<self.lost):
             finalText += "You lost. Better luck next time!"
@@ -61,4 +61,3 @@ class DisplayPanel:
             scoreLabel = Label(t, text = finalText, font = labelfont, fg = "Purple")
         scoreLabel.grid()
         t.mainloop()
-        
