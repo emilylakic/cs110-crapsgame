@@ -51,5 +51,6 @@ class CrapsTable(Frame):
         return self.die1.isRolling() or self.die2.isRolling()
 
     def paintComponent():
+        super().paintComponent()
         self.die1.draw(); #previously used g's only for graphics in Java
         self.die2.draw();
