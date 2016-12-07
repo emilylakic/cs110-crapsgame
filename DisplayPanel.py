@@ -51,7 +51,7 @@ class DisplayPanel:
             return
         elif(self.won>self.lost):
             finalText += "You won! Congratulations!!"
-            scoreLabel = Label(t, text = finalText, font = labelfont, fg = "#b3cf67")
+            scoreLabel = Label(t, text = finalText, font = labelfont, fg = "#79e089")
         elif(self.won<self.lost):
             finalText += "You lost. Better luck next time!"
             scoreLabel = Label(t, text = finalText, font = labelfont, fg = "Red")
