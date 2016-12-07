@@ -49,15 +49,14 @@ class DisplayPanel:
         if(self.won==0 and self.lost==0):
             t.destroy()
             return
-
         elif(self.won>self.lost):
             finalText += "You won! Congratulations!!"
-            scoreLabel = Label(t, text = finalText, font = labelfont, fg = "Green")
+            scoreLabel = Label(t, text = finalText, font = labelfont, fg = "#b3cf67")
         elif(self.won<self.lost):
             finalText += "You lost. Better luck next time!"
             scoreLabel = Label(t, text = finalText, font = labelfont, fg = "Red")
         else:
             finalText += "You broke even!"
-            scoreLabel = Label(t, text = finalText, font = labelfont, fg = "Purple")
+            scoreLabel = Label(t, text = finalText, font = labelfont, fg = "#cf6786")
         scoreLabel.grid()
         t.mainloop()
