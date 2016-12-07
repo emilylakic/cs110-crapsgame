@@ -43,14 +43,15 @@ class CrapsTable(Frame):
         result = self.game.processRoll(total)
         point = self.game.getPoint()
         self.display.update(result, point)
-        #widget.repaint()
+        self.paintComponent()
         
     # returns true if dice are still rolling; otherwise
     # returns false
     def isDiceRolling(self):
         return self.die1.isRolling() or self.die2.isRolling()
 
-    def paintComponent():
-        super().paintComponent()
+    def paintComponent(self):
+        self.die1.clearCanvas() #clears the canvas
+        self.die2.clearCanvas() #clears the canvas
         self.die1.draw(); #previously used g's only for graphics in Java
         self.die2.draw();
