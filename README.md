@@ -1,2 +1,2 @@
 # Craps Game
-🎲 By Emily Lakic, Jordana Simon, Danielle O'Neal and Samantha Chu
+🎲 - By Emily Lakic, Jordana Simon, Danielle O'Neal and Samantha Chu
