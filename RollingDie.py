@@ -3,7 +3,6 @@ from tkinter import *
 import random
 
 #Implements a rolling die
-
 class RollingDie(Die):
     #Sets this die off the table
     def __init__(self):
@@ -12,6 +11,7 @@ class RollingDie(Die):
         self.xSpeed = 0
         self.ySpeed = 0
         self.sides = 6
+        self.rollNum = None
         self.tableLeft = 0
         self.tableRight = 0
         self.tableTop = 0
@@ -21,7 +21,8 @@ class RollingDie(Die):
         self.speedLimit = 2.0
         self.dotSize = 0
         self.dieSize = 24
-
+        self.canvas = canvas
+        self.canvas.pack(fill = BOTH, expand = 1)
         
     #Sets the table boundaries
     def setBounds(self,left, right, top, bottom):
@@ -35,8 +36,8 @@ class RollingDie(Die):
         super().roll()
         width = self.tableRight - self.tableLeft
         height = self.tableBottom - self.tableTop
-        self.xCenter = self.tableLeft
-        self.yCenter = self.tableTop + height / 2
+        self.xCenter = self.tableLeft /2
+        self.yCenter = self.tableTop / 2
         self.xSpeed = width * (random.randrange(0.0,1.0)+1) * self.speedFactor
         self.ySpeed = height * (random.randrange(0.0,1.0)-.5) * 2.0 * self.speedFactor
 
@@ -53,38 +54,42 @@ class RollingDie(Die):
 
     #Moves this dice on the table and bounces off the edges when necessary
     def move(self):
-        self.xCenter = self.xSpeed
-        self.yCenter = self.ySpeed
+        self.xCenter += self.xSpeed
+        self.yCenter += self.ySpeed
         radius = self.dieSize / 2
-        if(self.xCenter < self.tableLeft + radius):
+        if (self.xCenter < self.tableLeft + radius):
             self.xCenter = self.tableLeft + radius
             self.xSpeed = -self.xSpeed
-        if(self.xCenter > self.tableRight - radius):
+        if (self.xCenter > self.tableRight - radius):
             self.xCenter = self.tableRight - radius
             self.xSpeed = -self.xSpeed
-        if(self.yCenter < self.tableTop + radius):
+        if (self.yCenter < self.tableTop + radius):
             self.yCenter = self.tableTop + radius
             self.ySpeed = -self.ySpeed
+        if (self.yCenter > self.tableBottom + radius): 
+            self.yCenter = self.tableBottom - radius; 
+            self.ySpeed = -self.ySpeed;
 
     #Draws this die, rolling or stopped; also moves this die, when rolling
     def draw(self):
         if(self.xCenter < 0 or self.yCenter < 0):
             return
         elif(self.isRolling()):
-            self.move()
-            self.drawRolling()
-            self.xSpeed *= self.slowdown
-            self.ySpeed *= self.slowdown
+            while(self.isRolling()):
+                self.move()
+                self.drawRolling()
+                self.xSpeed *= self.slowdown
+                self.ySpeed *= self.slowdown
+            self.drawStopped()  
         else:
             self.drawStopped()
 
     def drawDie(self, x1, y1, x2, y2, r):
-        self.create_arc(x1, y1, x1+r, y1+r, start=90, extent=90, style=tk.PIESLICE, fill = "red")
-        self.create_arc(x2-r, y1, x2, y1+r, start=0, extent=90, style=tk.PIESLICE, fill = "red")
-        self.create_arc(x1, y2-r, x1+r, y2, start=180, extent=90, style=tk.PIESLICE, fill = "red")
-        self.create_arc(x2-r, y2-r, x2, y2, start=270, extent=90, style=tk.PIESLICE, fill = "red")
-        self.create_rectangle(x1+r/2, y1-r/2, x2-r/2, y2+r/2, fill = "red")
-        self.create_rectangle(x1, y1, x2, y2, fill="red")
+        self.canvas.create_arc(x1, y1, x1+r, y1+r, start= 90, extent= 90, fill = 'red')
+        self.canvas.create_arc(x2-r, y1, x2, y1+r, start= 0, extent= 90, fill = 'red')
+        self.canvas.create_arc(x1, y2-r, x1+r, y2, start= 180, extent= 90, fill = 'red')
+        self.canvas.create_arc(x2-r, y2-r, x2, y2, start= 270, extent= 90, fill = 'red')
+        self.canvas.create_rectangle(x1, y1, x2, y2, fill= 'red')
 
     #Draws this die when rolling with a random number of dots
     def drawRolling(self):
