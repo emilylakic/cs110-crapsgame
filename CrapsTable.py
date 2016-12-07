@@ -52,6 +52,6 @@ class CrapsTable(Frame):
 
     def paintComponent(self):
         self.die1.clearCanvas() #clears the canvas
-        self.die2.clearCanvas() #clears the canvas
+        #self.die2.clearCanvas() #clears the canvas, not needed
         self.die1.draw(); #previously used g's only for graphics in Java
         self.die2.draw();
