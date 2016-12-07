@@ -101,52 +101,51 @@ class RollingDie(Die):
             oval = canvas.create_oval(x-2,y-2,x+self.dieSize+4,y+self.dieSize+4)
         die = Die();
         die.roll()
-        self.drawDots(x, y, Die.getNumDots())
+        self.drawDots(x, y, die.getNumDots())
 
     #Draws this die when stopped
     def drawStopped():
         x = self.xCenter - self.dieSize/2
         y = self.yCenter - self.dieSize/2
-        self.drawDie(x, y, x+self.dieSize, y+self.dieSize)
+        self.drawDie(x, y, x + self.dieSize, y + self.dieSize, 0)
         self.drawDots(x, y, self.getNumDots())
 
     #Draws a given number of dots on this die
     def drawDots(self, x, y, numDots):
-        self.setFill("White")
         self.dotSize = self.dieSize/4
         step = self.dieSize/8
         x1 = x + step - 1
-        x2 = x + 3*step
-        x3 = x + 5*step + 1
+        x2 = x + 3 * step
+        x3 = x + 5 * step + 1
         y1 = y + step - 1
-        y2 = y + 3*step
-        y3 = y + 5*step + 1
+        y2 = y + 3 * step
+        y3 = y + 5 * step + 1
 
         #Insert a replacement for a switch
         v = numDots
-        if v == 1:
+        if (numDots == 1):
             #Make 1 Dot
             oval1 = canvas.create_oval(x2, y2, x2+self.dotSize, y2+self.dotSize)
             
-        if v == 2:
+        if (numDots == 2):
             #Make 2 Dots
             oval1 = canvas.create_oval(x1, y1, x1+self.dotSize, y1+self.dotSize)
             oval2 = canvas.create_oval(x3, y3, x3+self.dotSize, y3+self.dotSize)
           
-        if v == 3:
+        if (numDots == 3):
             #Make 3 Dots
             oval1 = canvas.create_oval(x1, y3, x1+self.dotSize, y3+self.dotSize)
             oval2 = canvas.create_oval(x2, y2, x2+self.dotSize, y2+self.dotSize)
             oval3 = canvas.create_oval(x3, y1, x3+self.dotSize, y1+self.dotSize)
           
-        if v == 4:
+        if (numDots == 4):
             #Make 4 Dots
             oval1 = canvas.create_oval(x1, y1, x1+self.dotSize, y1+self.dotSize)
             oval2 = canvas.create_oval(x3, y1, x3+self.dotSize, y1+self.dotSize)
             oval3 = canvas.create_oval(x1, y3, x1+self.dotSize, y3+self.dotSize)
             oval4 = canvas.create_oval(x3, y3, x3+self.dotSize, y3+self.dotSize)
                 
-        if v == 5:
+        if (numDots == 5):
             #Make 5 Dots
             oval1 = canvas.create_oval(x1, y1, x1+self.dotSize, y1+self.dotSize)
             oval2 = canvas.create_oval(x3, y1, x3+self.dotSize, y1+self.dotSize)
@@ -154,7 +153,7 @@ class RollingDie(Die):
             oval4 = canvas.create_oval(x1, y3, x1+self.dotSize, y3+self.dotSize)
             oval5 = canvas.create_oval(x3, y3, x3+self.dotSize, y3+self.dotSize)
                 
-        if v == 6:
+        if (numDots == 6):
             #Make 6 Dots
             oval1 = canvas.create_oval(x1, y1, x1+self.dotSize, y1+self.dotSize)
             oval2 = canvas.create_oval(x3, y1, x3+self.dotSize, y1+self.dotSize)
@@ -162,12 +161,6 @@ class RollingDie(Die):
             oval4 = canvas.create_oval(x3, y2, x3+self.dotSize, y2+self.dotSize)
             oval5 = canvas.create_oval(x1, y3, x1+self.dotSize, y3+self.dotSize)
             oval6 = canvas.create_oval(x3, y3, x3+self.dotSize, y3+self.dotSize)
-           
-def main():
-    rolling = RollingDie()
-    rolling.roll()
-    rolling.isRolling()
-
-main()
-
-    
+       
+    def clearCanvas(self):
+        self.canvas.delete("all")
