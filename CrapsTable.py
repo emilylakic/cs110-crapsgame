@@ -9,8 +9,8 @@ class CrapsTable(Frame):
         self.delay = 20
         self.display = display
         self.game = CrapsGame()
-        self.die1.draw();
-        self.die2.draw();
+        self.die1.draw()
+        self.die2.draw()
 
     def CrapsTable(display):
         root = Tk()
@@ -18,8 +18,8 @@ class CrapsTable(Frame):
         widget.config(highlightbackground="Orange")
 
     def rollDie(self):
-        self.die1.setBounds(25, 675, 25, 445)
-        self.die2.setBounds(25, 675, 25, 445)
+        self.die1.setBounds(25, 375, 25, 350)
+        self.die2.setBounds(25, 675, 25, 350)
         self.die1.roll()
         self.die2.roll()
         self.die1.draw()
@@ -27,11 +27,8 @@ class CrapsTable(Frame):
         self.actionPerformed()
 
     def actionPerformed(self):
-        while(self.isDiceRolling()):
-            if(self.die1.isRolling()):
-                self.die1.avoidCollision(self.die2)
-            elif(self.die2.isRolling()):
-                self.die2.avoidCollision(self.die1)
+        self.die1.avoidCollision(self.die2)
+        self.die2.avoidCollision(self.die1)
         total = self.die1.getNumDots() + self.die2.getNumDots()
         result = self.game.processRoll(total)
         point = self.game.getPoint()
@@ -43,5 +40,5 @@ class CrapsTable(Frame):
 
     def paintComponent(self):
         self.die1.clearCanvas()
-        self.die1.draw();
-        self.die2.draw();
+        self.die1.draw()
+        self.die2.draw()

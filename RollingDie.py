@@ -50,7 +50,7 @@ class RollingDie(Die):
     def avoidCollision(self,other):
         if(other == self):
             return
-        while(abs(self.xCenter - other.xCenter) < self.dieSize and abs(self.yCenter - other.yCenter) < self.dieSize):
+        while(abs(self.xCenter - other.xCenter) <= self.dieSize and abs(self.yCenter - other.yCenter) <= self.dieSize):
             self.move()
 
     #Moves this dice on the table and bounces off the edges when necessary
@@ -68,8 +68,8 @@ class RollingDie(Die):
             self.yCenter = self.tableTop + radius
             self.ySpeed = -self.ySpeed
         if (self.yCenter > self.tableBottom + radius):
-            self.yCenter = self.tableBottom - radius;
-            self.ySpeed = -self.ySpeed;
+            self.yCenter = self.tableBottom - radius
+            self.ySpeed = -self.ySpeed
 
     #Draws this die, rolling or stopped; also moves this die, when rolling
     def draw(self):
@@ -100,7 +100,7 @@ class RollingDie(Die):
             self.drawDie(x,y,x+self.dieSize,y+self.dieSize, self.dieSize)
         else:
             oval = self.canvas.create_oval(x-2,y-2,x+self.dieSize+4,y+self.dieSize+4,fill = "red")
-        die = Die();
+        die = Die()
         die.roll()
         self.drawDots(x, y, die.getNumDots())
 

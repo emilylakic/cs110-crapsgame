@@ -19,7 +19,7 @@ class Craps(Frame):
 
         self.centerWindow()
 
-
+    # Position the window to the center of screen 
     def centerWindow(self):
         w = 750
         h = 550
