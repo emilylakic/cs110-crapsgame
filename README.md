@@ -1,5 +1,5 @@
 # Craps Game - CS110 Final Project
-### By:Danielle O'Neal, Emily Lakic, Jordana Simon and Samantha Chu
+### By: Mark Caldropoli, Emily Lakic, Jordana Simon, Samantha Chu and Danielle O'Neal
 
 ##Command to run: python3 Craps.py
 ##Purpose of classes: 
